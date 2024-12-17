@@ -104,12 +104,12 @@ function Create_trip() {
             </div>
 
             {/* Submit Button */}
-            <button
+            <input
               type="submit"
               className="z-auto uppercase w-1/3 p-2 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none"
             >
               Generate Trip
-            </button>
+            </input>
           </form>
         </div>
       </div>
