@@ -106,7 +106,7 @@ function Create_trip() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="uppercase w-1/3 p-2 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none"
+              className="z-auto uppercase w-1/3 p-2 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none"
             >
               Generate Trip
             </button>
