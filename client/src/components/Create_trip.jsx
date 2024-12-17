@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SelectBudgetOptions, SelectTravellerList } from "../constants/Options";
 
-function CreateTrip() {
+function Create_trip() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     destination: "",
@@ -134,4 +134,4 @@ function CreateTrip() {
   );
 }
 
-export default CreateTrip;
+export default Create_trip;
