@@ -1,7 +1,7 @@
 
 
 .bg-image{
-    background-image: url('F:\TripSync\client\src\assets\IMG_20241217_232630_643.jpg');
+    background-image: url('./assets/IMG_20241217_232630_643.jpg');
     background-size: cover;
     /* background: no-repeat; */
 }
