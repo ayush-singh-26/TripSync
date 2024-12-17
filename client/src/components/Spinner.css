@@ -1,16 +1,24 @@
 
 
 .progress {
-   width: 100.8px;
-   height: 16.8px;
-   -webkit-mask: linear-gradient(90deg,#474bff 70%,#0000 0) left/20% 100%;
+   width: 200px;
+   height: 20px;
+   -webkit-mask: linear-gradient(90deg,#474bff 70%,#0000 0) left/5% 100%;
    background: linear-gradient(#474bff 0 0) left/0% 100% no-repeat
        #dbdcef;
-   animation: progress-422c3u 2s infinite steps(6);
+   animation: progress-422c3u 5s infinite steps(21);
 }
 
 @keyframes progress-422c3u {
    100% {
       background-size: 120% 100%;
    }
+}
+
+.center{
+   height: 100vh;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
 }

@@ -1,8 +1,13 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 function Home() {
+
+    
+
+
     return (
         <div className="bg-gray-900 text-white min-h-screen flex flex-col">
             {/* Hero Section */}

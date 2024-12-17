@@ -1,8 +1,41 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate=useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(null); 
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); 
+    setLoading(true);
+    setError(null); 
+
+    try {
+      const response = await axios.post("http://localhost:8000/api/v1/users/login", {
+        email: email,
+        password: password,
+      });
+
+      console.log(response.data.data.accessToken);
+      
+      localStorage.setItem("accessToken", response.data.data.accessToken)
+
+      navigate('/')
+
+    } catch (err) {
+      setError("Invalid email or password.");
+    } finally {
+      setLoading(false); 
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-stretch text-white">
+      {/* Left side background image */}
       <div
         className="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center"
         style={{
@@ -16,6 +49,7 @@ function Login() {
           <p className="text-3xl my-4">Capture your personal memory in unique way, anywhere.</p>
         </div>
         <div className="bottom-0 absolute p-4 text-center right-0 left-0 flex justify-center space-x-4">
+          {/* Social media icons */}
           <span>
             <svg
               fill="#fff"
@@ -51,42 +85,39 @@ function Login() {
           </span>
         </div>
       </div>
+      {/* Right side form */}
       <div
         className="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0"
         style={{ backgroundColor: "#161616" }}
       >
-        <div
-          className="absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80)",
-          }}
-        >
-          <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
-        </div>
         <div className="w-full py-6 z-20">
-          
           <p className="my-6 text-3xl text-gray-300">Sign in to your account</p>
+          {error && <p className="text-red-500">{error}</p>}
           <div className="space-y-6">
-            
-
-            <form className="space-y-4 flex flex-col items-center">
+            <form className="space-y-4 flex flex-col items-center" onSubmit={handleSubmit}>
               <input
                 type="email"
                 placeholder="Email"
                 className="p-2 w-1/2 text-lg bg-black border-2 border-gray-600 text-white rounded-xl focus:outline-none focus:border-gray-500"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
               <input
                 type="password"
                 placeholder="Password"
                 className="p-2 w-1/2 text-lg bg-black border-2 border-gray-600 text-white rounded-xl focus:outline-none focus:border-gray-500"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
               />
               <button
                 aria-label="Sign in"
                 type="submit"
                 className="uppercase block w-1/3 p-2 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none"
+                disabled={loading}
               >
-                Sign In
+                {loading ? "Signing In..." : "Sign In"}
               </button>
             </form>
 
