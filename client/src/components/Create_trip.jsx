@@ -7,8 +7,8 @@ function Create_trip() {
   const [formData, setFormData] = useState({
     destination: "",
     days: "",
-    budget: null,
-    traveller: null,
+    budget: "",
+    traveller: "",
   });
 
   const handleChange = (field, value) => {
@@ -104,12 +104,12 @@ function Create_trip() {
             </div>
 
             {/* Submit Button */}
-            <input
+            <button
               type="submit"
               className="z-auto uppercase w-1/3 p-2 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none"
             >
               Generate Trip
-            </input>
+            </button>
           </form>
         </div>
       </div>
