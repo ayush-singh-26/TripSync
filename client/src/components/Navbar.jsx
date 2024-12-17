@@ -34,27 +34,27 @@ function Navbar() {
                 </div>
 
                 <div className="flex space-x-6 items-center">
-                    <Link to="/" className="text-gray-200 hover:text-white transition-colors duration-300 px-3 py-2 rounded-lg">
+                    <Link to="/" className="text-gray-200 hover:text-white transition-colors no-underline duration-300 px-3 py-2 rounded-lg">
                         Home
                     </Link>
-                    <Link to="/about" className="text-gray-200 hover:text-white transition-colors duration-300 px-3 py-2 rounded-lg">
+                    <Link to="/about" className="text-gray-200 hover:text-white transition-colors no-underline duration-300 px-3 py-2 rounded-lg">
                         about
                     </Link>
-                    <Link to="/getBookings" className="text-gray-200 hover:text-white transition-colors duration-300 px-3 py-2 rounded-lg">
+                    <Link to="/getBookings" className="text-gray-200 hover:text-white transition-colors no-underline duration-300 px-3 py-2 rounded-lg">
                         View your Trip
                     </Link>
 
 
                     {userData ? (
-                        <Link onClick={() => localStorage.removeItem('accessToken')} className="text-white bg-gray-900 hover:bg-gray-700 transition-colors duration-300 px-4 py-2 rounded-lg">
+                        <Link onClick={() => localStorage.removeItem('accessToken')} className="text-white bg-gray-900 hover:bg-gray-700 transition-colors no-underline duration-300 px-4 py-2 rounded-lg">
                             Logout
                         </Link>
                     ) : (
                         <div className="flex items-center space-x-4">
-                            <Link to="/signup" className="text-white bg-gray-900 hover:bg-gray-700 transition-colors duration-300 px-4 py-2 rounded-lg">
+                            <Link to="/signup" className="text-white bg-gray-900 hover:bg-gray-700 transition-colors no-underline duration-300 px-4 py-2 rounded-lg">
                                 Sign Up
                             </Link>
-                            <Link to="/login" className="text-white bg-gray-900 hover:bg-gray-700 transition-colors duration-300 px-4 py-2 rounded-lg">
+                            <Link to="/login" className="text-white bg-gray-900 hover:bg-gray-700 transition-colors no-underline duration-300 px-4 py-2 rounded-lg">
                                 Login
                             </Link>
                         </div>

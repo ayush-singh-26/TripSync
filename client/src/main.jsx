@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Trip_details from './Pages/Trip_details.jsx'
 import SignUp from './Pages/SignUp.jsx'
 import Login from './Pages/Login.jsx'
+import About from './Pages/About.jsx'
 
 
 
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>,
       <Route path='/' element={<Home />}/>,
       <Route path='/signup' element={<SignUp/>}/>,
+      <Route path='/about' element={<About/>}/>,
       <Route path='/login' element={<Login/>}/>,
       <Route path='/create-trip' element={<Create_trip />} />
       <Route path='/trip-details' element={<Trip_details/>} />
