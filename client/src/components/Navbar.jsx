@@ -40,9 +40,9 @@ function Navbar() {
                     <Link to="/about" className="text-gray-200 hover:text-white transition-colors no-underline duration-300 px-3 py-2 rounded-lg">
                         about
                     </Link>
-                    <Link to="/getBookings" className="text-gray-200 hover:text-white transition-colors no-underline duration-300 px-3 py-2 rounded-lg">
+                    {/* <Link to="/getBookings" className="text-gray-200 hover:text-white transition-colors no-underline duration-300 px-3 py-2 rounded-lg">
                         View your Trip
-                    </Link>
+                    </Link> */}
 
 
                     {userData ? (
