@@ -11,7 +11,7 @@ function Navbar() {
         const fetchCurrentUser = async () => {
             const token = localStorage.getItem('accessToken');
 
-            const response = await axios.get('http://localhost:8000/api/v1/users/current-user', {
+            const response = await axios.get('https://tripsync-qm7n.onrender.com/api/v1/users/current-user', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

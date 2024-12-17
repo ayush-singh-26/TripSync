@@ -15,7 +15,7 @@ function Login() {
     setError(null); 
 
     try {
-      const response = await axios.post("http://localhost:8000/api/v1/users/login", {
+      const response = await axios.post("https://tripsync-qm7n.onrender.com/api/v1/users/login", {
         email: email,
         password: password,
       });

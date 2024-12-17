@@ -12,7 +12,7 @@ const TripDetails = () => {
   useEffect(() => {
     const fetchTripDetails = async () => {
       try {
-        const response = await axios.post("http://localhost:8000/api/v1/place/generate-trip", {
+        const response = await axios.post("https://tripsync-qm7n.onrender.com/api/v1/place/generate-trip", {
           destination: formData.destination,
           days: formData.days,
           budget: formData.budget,

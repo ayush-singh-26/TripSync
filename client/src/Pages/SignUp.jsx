@@ -26,7 +26,7 @@ function SignUp() {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8000/api/v1/users/register",
+      const response = await axios.post("https://tripsync-qm7n.onrender.com/api/v1/users/register",
         {
           fullname: formData.fullname,
           email: formData.email,
