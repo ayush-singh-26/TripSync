@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import {createBrowserRouter,createRoutesFromElements, RouterProvider,Route} from 'react-router-dom'
-import Create_trip from './components/create_trip.jsx'
+import Create_trip from './components/Create_trip.jsx'
 import Home from './components/Home.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Trip_details from './Pages/Trip_details.jsx'
